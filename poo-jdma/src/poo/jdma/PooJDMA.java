@@ -7,8 +7,8 @@ public class PooJDMA {
         
         //Tenemos que generar antes los objetos de las clases anteriores
         Usuario x = new Usuario();
-        x.altura = 1.78f;
-        x.peso = 63;
+        x.setAltura(1.78f);
+        x.setPeso(63);
         Imc algo = new Imc();
         algo.u = x;
         
