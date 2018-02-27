@@ -5,6 +5,9 @@
  */
 package poo.jdma;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author T-102
@@ -113,19 +116,28 @@ public class ventana extends javax.swing.JFrame {
     }//GEN-LAST:event_textoAlturaActionPerformed
 
     private void botonCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCalcularActionPerformed
-        //Pedir valores al texto peso y altura
-        float peso = Float.parseFloat(textoPeso.getText());
-        float altura = Float.parseFloat(textoAltura.getText());
-        
-        //Creamos nuestra entidad
-        Usuario u = new Usuario();
-        u.setPeso(peso);
-        u.setAltura(altura);
-        //Generamos el modelo IMC
-        Imc x = new Imc();
-        x.u=u;
-        //En el IMC que se llama X, invocamos el metodo calcular
-        etiquetaResultado.setText(x.calcular());
+        try {
+            //Pedir valores al texto peso y altura
+            float peso = Float.parseFloat(textoPeso.getText());
+            float altura = Float.parseFloat(textoAltura.getText());
+            
+            //Creamos nuestra entidad
+            Usuario u = new Usuario();
+            
+            ValidarCantidades.validarValorNegativo(peso);
+            ValidarCantidades.validarValorNegativo(altura);
+            
+            u.setPeso(peso);
+            u.setAltura(altura);
+            //Generamos el modelo IMC
+            Imc x = new Imc();
+            x.u=u;
+            //En el IMC que se llama X, invocamos el metodo calcular
+            etiquetaResultado.setText(x.calcular());
+        } catch (NumeroNegativoException ex) {
+            etiquetaResultado.setText(ex.getMessage());
+            
+        }
     }//GEN-LAST:event_botonCalcularActionPerformed
 
     /**
