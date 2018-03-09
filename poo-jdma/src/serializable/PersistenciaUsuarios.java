@@ -39,9 +39,7 @@ public class PersistenciaUsuarios {
     }
     
     public Usuario recobrarUsuario(){
-        
-        
-        File file = new File("nuevoarchivo.ext");
+        File file = new File("nuevoarchivo.miext");
         
         Usuario recobrado = null;
         
