@@ -71,6 +71,11 @@ public class InterfazEmpleados extends javax.swing.JFrame {
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ventas", "Sistemas", "Contabilidad", "Finanzas" }));
 
         jButton1.setText("Guardar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -160,7 +165,7 @@ public class InterfazEmpleados extends javax.swing.JFrame {
                 .addGap(172, 172, 172))
         );
 
-        jTabbedPane1.addTab("tab2", jPanel2);
+        jTabbedPane1.addTab("Buscar Empleados", jPanel2);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -187,6 +192,15 @@ public class InterfazEmpleados extends javax.swing.JFrame {
     private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField3ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        Empleado e1 = new Empleado("Juan", "Manrique", "Ayala", 45000f, "Sistemas");
+        System.out.println("Nombre: "+e1.getNombre());
+        System.out.println("Nombre: "+e1.getNombre());
+        System.out.println("Nombre: "+e1.getNombre());
+        System.out.println("Nombre: "+e1.getNombre());
+        System.out.println("Nombre: "+e1.getNombre());
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
