@@ -5,6 +5,7 @@
  */
 package Thread;
 
+import java.time.LocalTime;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFrame;
@@ -21,20 +22,21 @@ public class VentanaX extends javax.swing.JFrame {
     public VentanaX() {
         initComponents();
         
-        Thread t = new Thread(new Runnable(){
+        Thread tr = new Thread( new Runnable() {
             @Override
             public void run() {
-                while(JFrame.HEIGHT > 0){
-                    
+                
+                while(getWidth() > 0){
+                    setSize(getHeight()-10, getWidth()-10);
                     try {
                         Thread.sleep(1000);
                     } catch (InterruptedException ex) {
-                        Logger.getLogger(VentanaX.class.getName()).log(Level.SEVERE, null, ex);
                     }
                 }
             }
-            
         });
+        
+        tr.start();
     }
 
     /**
